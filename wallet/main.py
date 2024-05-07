@@ -15,8 +15,13 @@ def main(*args, **kwargs):
     parser.add_argument('-f','--find', action='store_true', help="Поиск по записям в транзакциях")
     args = parser.parse_args()
     try:
-        arg = list(vars(args).keys())[list(vars(args).values()).index(True)]
-    except:
+        arg_values = vars(args)
+        true_values = [key for key, value in arg_values.items() if value == True]
+        if true_values:
+            arg = true_values[0]
+        else:
+            sys.exit("simple_wallet [options]: используйте -h или --help чтобы узнать больше")
+    except Exception as e:
         sys.exit("simple_wallet [options]: используйте -h или --help чтобы узнать больше")
     
     # Данные хранятся в одном файле, кошелек хранится в class объекте и пишется через pickle

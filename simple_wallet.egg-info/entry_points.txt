@@ -1,2 +1,0 @@
-[console_scripts]
-simple_wallet = wallet.wallet:main

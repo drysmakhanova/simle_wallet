@@ -11,13 +11,13 @@ setup(
     version="0.1.0", 
     description="Простой кошелек с балансом и транзакциями",  
     long_description=long_description,  
-    url="https://github.com/drysmakhanova/simle_wallet", 
+    url="https://github.com/drysmakhanova/simple_wallet", 
 
-    packages=find_packages(include=['wallet', 'wallet.*']), 
+    packages=find_packages(include=['wallet']), 
     scripts=['wallet\main.py','wallet\helper_classes.py','wallet\helper_functions.py'], 
     entry_points={
         'console_scripts': [
-            'simple_wallet=wallet.wallet:main'
+            'simple_wallet=wallet.main:main'
         ]
     },
 )

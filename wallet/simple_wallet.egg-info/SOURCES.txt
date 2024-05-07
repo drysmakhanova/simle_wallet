@@ -1,8 +1,0 @@
-README.md
-setup.py
-src/wallet.py
-src/simple_wallet.egg-info/PKG-INFO
-src/simple_wallet.egg-info/SOURCES.txt
-src/simple_wallet.egg-info/dependency_links.txt
-src/simple_wallet.egg-info/entry_points.txt
-src/simple_wallet.egg-info/top_level.txt
