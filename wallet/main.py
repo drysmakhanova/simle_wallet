@@ -1,13 +1,17 @@
 import argparse
 import os.path
 import pickle
+import sys
 from .helper_classes import Wallet 
 from .helper_functions import balance, add, redact, find
 
 def main(*args, **kwargs):
 
+    if len(sys.argv) != 2:
+        sys.exit("simple_wallet [options]: используйте -h или --help чтобы узнать больше")
+
     # Получить и парсить аргументы с консольной строки
-    parser = argparse.ArgumentParser(usage='wallet.py [options]', description='Кошелек со счетом и транзакциями')
+    parser = argparse.ArgumentParser(usage='simple_wallet [options]', argument_default="-h", description='Кошелек со счетом и транзакциями')
     parser.add_argument('-b', '--balance', action='store_true', help="Вывод текущего баланса")
     parser.add_argument('-n','--new', action='store_true', help="Добавить новую запись в транзакции")
     parser.add_argument('-r','--redact', action='store_true', help="Редактировать запись в транзакциях")
