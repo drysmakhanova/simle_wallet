@@ -7,9 +7,6 @@ from .helper_functions import balance, add, redact, find
 
 def main(*args, **kwargs):
 
-    if len(sys.argv) != 2:
-        sys.exit("simple_wallet [options]: используйте -h или --help чтобы узнать больше")
-
     # Получить и парсить аргументы с консольной строки
     parser = argparse.ArgumentParser(usage='simple_wallet [options]', argument_default="-h", description='Кошелек со счетом и транзакциями')
     parser.add_argument('-b', '--balance', action='store_true', help="Вывод текущего баланса")
@@ -17,7 +14,10 @@ def main(*args, **kwargs):
     parser.add_argument('-r','--redact', action='store_true', help="Редактировать запись в транзакциях")
     parser.add_argument('-f','--find', action='store_true', help="Поиск по записям в транзакциях")
     args = parser.parse_args()
-    arg = list(vars(args).keys())[list(vars(args).values()).index(True)]
+    try:
+        arg = list(vars(args).keys())[list(vars(args).values()).index(True)]
+    except:
+        sys.exit("simple_wallet [options]: используйте -h или --help чтобы узнать больше")
     
     # Данные хранятся в одном файле, кошелек хранится в class объекте и пишется через pickle
     filename = "wallet.txt"
