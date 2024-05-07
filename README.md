@@ -5,9 +5,9 @@
 ## Установка
 
 1. Скачайте файлы или клонируйте git:
-   '''git clone <repository-url> <target-directory>'''
+   ```git clone https://github.com/drysmakhanova/simple_wallet```
 3. Установите консольное приложение
-   ```pip install .\path\to\package'''
+   ```pip install .\path\to\package```
 
 ## Использование
 
